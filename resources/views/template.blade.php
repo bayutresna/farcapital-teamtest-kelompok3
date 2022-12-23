@@ -1,3 +1,5 @@
+{{-- ini untuk parentnya ya --}}
+
 <!doctype html>
 <html lang="en">
   <head>
