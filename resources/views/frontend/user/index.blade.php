@@ -7,7 +7,7 @@
     <title>Admin</title>
 </head>
 <body>
-    <button> <a href="/user/show">Add</a> </button>
+    <button> <a href="/user/create">Add</a> </button>
     <table>
         <thead>
             <tr>
@@ -20,12 +20,18 @@
         <tbody>
             @foreach($users as $user)
             <tr>
-            <td><img style="width: 300px; height:300px;" src="http://localhost:8000/storage/{{ $author['foto'] }}" alt=""></td>
+            <td>
                 <td>{{ $user["nama"] }}</td>
                 <td>{{ $user["username"] }}</td>
                 <td>{{ $user["email"] }}</td>
                 <td>{{ $user["password"] }}</td>
                 <td><button> <a href="/user/detail/{{ $user['id']  }}">Edit</a></button></td>
+                <td>
+                    <form action="{{route('user.delete', ['id' => $user['id']])}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

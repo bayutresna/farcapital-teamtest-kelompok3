@@ -26,8 +26,9 @@ Route::prefix('user')
         Route::get('/', 'index')->name('index');
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::post('/update/{id}', 'update')->name('update');
-        Route::get('/show', 'show')->name('show');
+        Route::get('/create', 'create')->name('create');
         Route::post('/add', 'store')->name('store');
+        Route::post('/delete/{id}', 'destroy')->name('delete');
     });
 
 Route::prefix('aspirasi')
@@ -37,6 +38,6 @@ Route::prefix('aspirasi')
         Route::get('/', 'index')->name('index');
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::post('/update/{id}', 'update')->name('update');
-        Route::get('/show', 'show')->name('show');
+        Route::get('/create', 'create')->name('create');
         Route::post('/add', 'store')->name('store');
     });
