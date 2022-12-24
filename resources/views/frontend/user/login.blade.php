@@ -2,7 +2,7 @@
 
 @section('konten')
     @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible">
+        <div class="alert alert-danger alert-dismissible mx-auto col-lg-6">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             {{ $errors->first() }}.
         </div>
