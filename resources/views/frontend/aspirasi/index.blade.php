@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspirasi</title>
-</head>
-<body>
-    <button> <a href="/aspirasi/show">Add</a> </button>
-    <table>
-        <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Cerita</th>
-                <th>Foto</th>
-                <th>Judul</th>
-                <th>Email</th>
-                <th>NIK</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($aspirasis as $aspirasi)
-            <tr>
-            <td><img style="width: 300px; height:300px;" src="http://localhost:8000/storage/{{ $aspirasi['foto'] }}" alt=""></td>
-                <td>{{ $aspirasi["nama"] }}</td>
-                <td>{{ $aspirasi["cerita"] }}</td>
-                <td>{{ $aspirasi["judul"] }}</td>
-                <td>{{ $aspirasi["email"] }}</td>
-                <td>{{ $aspirasi["nik"] }}</td>
-                <td><button> <a href="/aspirasi/detail/{{ $aspirasi['id']  }}">Edit</a></button></td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+@extends('template.base')
 
-</body>
-</html>
+@section('konten')
+    <div class="card">
+        <div class="card-header">
+            <a href="/aspirasi/show" class="btn btn-secondary btn-sm">Add</a>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        {{-- <th>Foto</th> --}}
+                        <th>Nama</th>
+                        <th>Judul</th>
+                        <th>Email</th>
+                        <th>NIK</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($aspirasis as $aspirasi)
+                        <tr>
+                            {{-- <td>
+                                <img style="width: 300px; height:300px;" src="{{ $aspirasi['foto'] }}" alt="">
+                            </td> --}}
+                            <td>{{ $aspirasi['nama'] }}</td>
+                            <td>{{ $aspirasi['judul'] }}</td>
+                            <td>{{ $aspirasi['email'] }}</td>
+                            <td>{{ $aspirasi['nik'] }}</td>
+                            <td>
+                                <a href="{{ route('aspirasi.detail', ['id' => $aspirasi['id']]) }}"
+                                    class="btn btn-primary btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection
