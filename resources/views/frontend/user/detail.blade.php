@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <button type="submit">Update</button>
+                <button type="submit" class="btn btn-success btn-sm">Update</button>
 
             </form>
 
