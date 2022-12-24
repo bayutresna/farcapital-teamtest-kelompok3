@@ -42,7 +42,7 @@
                         <tr>
                             <td>tanggal</td>
                             <td> : </td>
-                            <td>{{ $aspirasi['created_at'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse($aspirasi['created_at'])->translatedFormat('d F Y H:i:s') }}</td>
                         </tr>
                     </table>
                 </div>

@@ -39,7 +39,7 @@
                                 @default Belum Dibaca
                             @endswitch
                             </td>
-                            <td>{{ $aspirasi['created_at'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse($aspirasi['created_at'])->translatedFormat('d F Y H:i:s') }}</td>
                             <td>
                                 <a href="{{ route('aspirasi.detail', ['id' => $aspirasi['id']]) }}"
                                     class="btn btn-primary btn-sm">Edit</a>
