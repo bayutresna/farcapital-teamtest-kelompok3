@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AspirasiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AspirasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('implementasitemplate.contoh');
 });
-Route::get('/aspirasi/list', [AspirasiController::class, 'index']);
-Route::get('/aspirasi/{id}/show', [AspirasiController::class, 'show']);
-Route::post('/aspirasi/store', [AspirasiController::class, 'store']);
-Route::post('/aspirasi/{id}/update', [AspirasiController::class, 'update']);
-Route::post('/aspirasi/{id}/delete', [AspirasiController::class, 'destroy']);
+
+Route::prefix('user')
+->name('user.')
+->controller(UserController::class)
+->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/detail/{id}', 'detail')->name('detail');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::get('/show', 'show')->name('show');
+    Route::post('/add', 'store')->name('store');
+
+});
+
+Route::prefix('aspirasi')
+->name('aspirasi.')
+->controller(AspirasiController::class)
+->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/detail/{id}', 'detail')->name('detail');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::get('/show', 'show')->name('show');
+    Route::post('/add', 'store')->name('store');
+
+});
