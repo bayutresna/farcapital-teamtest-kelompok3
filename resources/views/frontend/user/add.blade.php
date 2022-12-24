@@ -3,7 +3,7 @@
 @section('konten')
     <div class="card">
         <div class="card-header">
-            <h5>Input User Anda</h5>
+            <h5>Input Admin</h5>
         </div>
         <div class="card-body">
 
@@ -11,16 +11,16 @@
                 @csrf
 
                 <label for="nama" class="form-label">nama</label>
-                <input type="text" id="nama" name="nama" class="form-controll"><br>
+                <input type="text" id="nama" name="nama" class="form-control"><br>
 
                 <label for="username" class="form-label">username</label>
-                <input type="text" id="username" name="username" class="form-controll"><br>
+                <input type="text" id="username" name="username" class="form-control"><br>
 
                 <label for="email" class="form-label">email</label>
-                <input type="email" id="email" name="email" class="form-controll"><br>
+                <input type="email" id="email" name="email" class="form-control"><br>
 
                 <label for="password" class="form-label">password</label>
-                <input type="password" id="password" name="password" class="form-controll"><br>
+                <input type="password" id="password" name="password" class="form-control"><br>
 
                 <button type="submit">Add</button>
 
