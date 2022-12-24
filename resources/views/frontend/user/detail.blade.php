@@ -1,32 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-</head>
-<body>
+@extends('template.base')
 
-    <form action="/user/update/{{ $user['id'] }}" method="POST" enctype="multipart/form-data">
-    @csrf
+@section('konten')
+    <div class="card">
+        <div class="card-header">Edit Admin</div>
+        <div class="card-body">
 
-    <label for="nama">nama</label>
-    <input type="text" id="nama" name="nama" value="{{ $user['nama'] }}"><br>
+            <form action="/user/update/{{ $user['id'] }}" method="POST">
+                @csrf
 
-    <label for="username">username</label>
-    <input type="text" id="username" name="username" value="{{ $user['username'] }}"><br>
+                <label for="nama" class="form-label">nama</label>
+                <input type="text" id="nama" name="nama" value="{{ $user['nama'] }}" class="form-control">
 
-    <label for="email">email</label>
-    <input type="email" id="email" name="email" value="{{ $user['email'] }}"><br>
+                <label for="username" class="form-label">username</label>
+                <input type="text" id="username" name="username" value="{{ $user['username'] }}" class="form-control">
 
-    <label for="password">password</label>
-    <input type="password" id="password" name="password" value="{{ $user['password'] }}"><br>
+                <div class="row">
+                    <div class="col">
+                        <label for="email" class="form-label">email</label>
+                        <input type="email" id="email" name="email" value="{{ $user['email'] }}"
+                            class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="password" class="form-label">password</label>
+                        <input type="password" id="password" name="password" class="form-control">
+                    </div>
+                </div>
 
+                <button type="submit">Update</button>
 
-    <button type="submit">Update</button>
+            </form>
 
-    </form>
-
-</body>
-</html>
+        </div>
+    </div>
+@endsection

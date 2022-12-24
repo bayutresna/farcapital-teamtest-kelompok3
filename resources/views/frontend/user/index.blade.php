@@ -26,7 +26,7 @@
                                 <form action="{{ route('user.destroy', ['id' => $user['id']]) }}" method="post">
                                     <a href="/user/detail/{{ $user['id'] }}" class="btn btn-primary btn-sm">Edit</a>
                                     @csrf
-                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </td>
                         </tr>
