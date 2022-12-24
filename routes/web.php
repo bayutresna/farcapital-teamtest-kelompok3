@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AspirasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ Route::get('/', function () {
 
 Route::prefix('user')
 ->name('user.')
-->controller(AuthorController::class)
+->controller(UserController::class)
 ->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/detail/{id}', 'detail')->name('detail');
@@ -31,7 +33,7 @@ Route::prefix('user')
 
 Route::prefix('aspirasi')
 ->name('aspirasi.')
-->controller(AuthorController::class)
+->controller(AspirasiController::class)
 ->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/detail/{id}', 'detail')->name('detail');
