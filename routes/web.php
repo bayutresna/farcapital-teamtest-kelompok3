@@ -16,17 +16,19 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('frontend.user.dashboard');
+Route::get('/', function () {
+    return view('frontend.aspirasi.dashboard');
 })->name('homepage');
 
-Route::any('/', [AuthController::class, 'login'])->name('login');
+Route::any('/login', [AuthController::class, 'login'])->name('login');
+Route::any('/logout', [AuthController::class, 'logout']) ->name('logout');
+
 
 Route::prefix('user')
     ->name('user.')
     ->controller(UserController::class)
     ->group(function () {
-        Route::get('/', 'index')->name('index');
+        Route::get('/', 'index')->name('index')->middleware('withauth');
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/create', 'create')->name('create');
