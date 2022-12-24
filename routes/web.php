@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AspirasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
