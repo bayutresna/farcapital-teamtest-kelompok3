@@ -15,14 +15,14 @@ class AspirasiController extends Controller
         );
         $data = $aspirasi["data"];
 
-        return view('aspirasi.index', [
-            "data" => $data
+        return view('frontend.aspirasi.index', [
+            "aspirasis" => $data
         ]);
     }
 
     function detail($id)
     {
-        $linknya = "http://localhost:8000/aspirasi/" . $id . "/show";
+        $linknya = "http://localhost:8000/api/aspirasi/" . $id . "/show";
         $responseData = HttpClient::fetch(
             "GET",
             $linknya
@@ -30,7 +30,7 @@ class AspirasiController extends Controller
         $data = $responseData["data"];
 
         return view('frontend.aspirasi.detail', [
-            "data" => $data
+            "aspirasi" => $data
         ]);
     }
     function create(){
