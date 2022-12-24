@@ -16,7 +16,7 @@ use App\Http\Controllers\AspirasiController;
 */
 
 Route::get('/', function () {
-    return view('implementasitemplate.contoh');
+    return view('frontend.user.dashboard');
 });
 
 Route::prefix('user')
