@@ -3,7 +3,7 @@
 @section('konten')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a> Edit Admin
+            <a href="{{ route('user.index') }}" class="btn btn-secondary btn-sm">Kembali</a>
         </div>
         <div class="card-body">
 
