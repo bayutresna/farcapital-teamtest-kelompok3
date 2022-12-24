@@ -64,6 +64,9 @@ class AspirasiController extends Controller
             $payload,
             $file
         );
-        return redirect()->route('aspirasi.index');
+
+        return redirect()->route('homepage')->withErrors([
+                'msg' =>'aspirasi telah diterima. terimakasih sudah berkontribusi untuk kemajuan negara kita'
+                ]);
     }
 }

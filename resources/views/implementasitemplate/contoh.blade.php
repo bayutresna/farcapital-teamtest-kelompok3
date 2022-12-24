@@ -1,9 +1,9 @@
 @extends('template.base')
 
 
-@section('title', 'List Siswa')
+@section('title', 'JUDUL ')
 
-@section('content')
+@section('konten')
 
     <h1>hai hai halo</h1>
 
