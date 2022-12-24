@@ -16,11 +16,11 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('frontend.user.dashboard');
+Route::get('/', function () {
+    return view('frontend.aspirasi.dashboard');
 })->name('homepage');
 
-Route::any('/', [AuthController::class, 'login'])->name('login');
+Route::any('/login', [AuthController::class, 'login'])->name('login');
 
 Route::prefix('user')
     ->name('user.')
