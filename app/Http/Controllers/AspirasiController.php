@@ -28,6 +28,14 @@ class AspirasiController extends Controller
             $linknya
         );
         $data = $responseData["data"];
+        $data['is_read'] = 1;
+
+        $linkpost = "http://localhost:8000/api/aspirasi/" . $id . "/update";
+        $post = HttpClient::fetch(
+            "post",
+            $linkpost,
+            $data
+        );
 
         return view('frontend.aspirasi.detail', [
             "aspirasi" => $data
