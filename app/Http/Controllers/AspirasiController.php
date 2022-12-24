@@ -15,22 +15,27 @@ class AspirasiController extends Controller
         );
         $data = $aspirasi["data"];
 
-        return view('aspirasi.index', [
-            "data" => $data
+        return view('frontend.aspirasi.index', [
+            "aspirasis" => $data
         ]);
     }
 
     function detail($id)
     {
-        $linknya = "http://localhost:8000/aspirasi/" . $id . "/show";
+        $linknya = "http://localhost:8000/api/aspirasi/" . $id . "/show";
         $responseData = HttpClient::fetch(
             "GET",
             $linknya
         );
         $data = $responseData["data"];
 
-        return view('aspirasi.detail', [
-            "data" => $data
+        return view('frontend.aspirasi.detail', [
+            "aspirasi" => $data
         ]);
+    }
+
+    function create()
+    {
+        return view('frontend.aspirasi.add');
     }
 }
