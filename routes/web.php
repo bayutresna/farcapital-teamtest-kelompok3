@@ -18,20 +18,20 @@ use App\Http\Controllers\AspirasiController;
 
 Route::get('/', function () {
     return view('frontend.user.dashboard');
-}) ->name('homepage');
+})->name('homepage');
 
 Route::any('/login', [AuthController::class, 'login'])->name('login');
 
-// Route::prefix('user')
-//     ->name('user.')
-//     ->controller(UserController::class)
-//     ->group(function () {
-//         Route::get('/', 'index')->name('index');
-//         Route::get('/detail/{id}', 'detail')->name('detail');
-//         Route::post('/update/{id}', 'update')->name('update');
-//         Route::get('/show', 'show')->name('show');
-//         Route::post('/add', 'store')->name('store');
-//     });
+Route::prefix('user')
+    ->name('user.')
+    ->controller(UserController::class)
+    ->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/detail/{id}', 'detail')->name('detail');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/show', 'show')->name('show');
+        Route::post('/add', 'store')->name('store');
+    });
 
 Route::prefix('aspirasi')
     ->name('aspirasi.')
