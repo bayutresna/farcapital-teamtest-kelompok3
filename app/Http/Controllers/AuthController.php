@@ -18,7 +18,7 @@ class AuthController extends Controller
 
         $datauser = $user['data'];
 
-        if(!$user){
+        if(!$datauser){
             return redirect()->back();
         }
         if(!$datauser){
