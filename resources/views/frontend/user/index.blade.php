@@ -24,7 +24,7 @@
                             <td>{{ $user['nama'] }}</td>
                             <td>{{ $user['username'] }}</td>
                             <td>{{ $user['email'] }}</td>
-                            <td>{{ $user['created_at'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse($user['created_at'])->translatedFormat('d F Y H:i:s') }}</td>
                             <td>
                                 <form action="{{ route('user.destroy', ['id' => $user['id']]) }}" method="post">
                                     <a href="/user/detail/{{ $user['id'] }}" class="btn btn-primary btn-sm">Edit</a>

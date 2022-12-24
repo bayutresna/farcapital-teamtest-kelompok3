@@ -60,6 +60,9 @@ class UserController extends Controller
     }
 
     function destroy($id){
+        // $payload = [
+        //     'id' => $id
+        // ];
         HttpClient::fetch(
             "POST",
             "http://127.0.0.1:8000/api/user/$id/delete"
