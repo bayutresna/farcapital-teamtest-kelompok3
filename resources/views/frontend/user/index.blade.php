@@ -27,6 +27,7 @@
                             <td>{{ $user['nama'] }}</td>
                             <td>{{ $user['username'] }}</td>
                             <td>{{ $user['email'] }}</td>
+                            {{-- carbon untuk mengubah format tanggal --}}
                             <td>{{ \Carbon\Carbon::parse($user['created_at'])->translatedFormat('d F Y H:i:s') }}</td>
                             <td>
                                 <form action="{{ route('user.destroy', ['id' => $user['id']]) }}" method="post">

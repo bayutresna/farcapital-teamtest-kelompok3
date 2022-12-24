@@ -44,6 +44,7 @@
                         <tr>
                             <td>tanggal</td>
                             <td> : </td>
+                            {{-- carbon untuk mengubah format tanggal --}}
                             <td>{{ \Carbon\Carbon::parse($aspirasi['created_at'])->translatedFormat('d F Y H:i:s') }}</td>
                         </tr>
                     </table>
