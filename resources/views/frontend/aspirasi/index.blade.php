@@ -4,7 +4,6 @@
     <div class="card">
 
         <div class="card-header">
-            <a href="/aspirasi/create" class="btn btn-secondary btn-sm">Add</a>
             <a href="{{ route('admin') }}" class="btn btn-secondary btn-sm">Kembali</a>
         </div>
         <div class="card-body">
@@ -33,16 +32,23 @@
                             <td>{{ $aspirasi['email'] }}</td>
                             <td>{{ $aspirasi['nik'] }}</td>
                             <td>
-                            @switch($aspirasi['is_read'])
-                                @case(1) Sudah Dibaca @break
-                                @case(0) Belum Dibaca @break
-                                @default Belum Dibaca
-                            @endswitch
+                                @switch($aspirasi['is_read'])
+                                    @case(1)
+                                        Sudah Dibaca
+                                    @break
+
+                                    @case(0)
+                                        Belum Dibaca
+                                    @break
+
+                                    @default
+                                        Belum Dibaca
+                                @endswitch
                             </td>
                             <td>{{ $aspirasi['created_at'] }}</td>
                             <td>
                                 <a href="{{ route('aspirasi.detail', ['id' => $aspirasi['id']]) }}"
-                                    class="btn btn-primary btn-sm">Edit</a>
+                                    class="btn btn-primary btn-sm">Detail</a>
                             </td>
                         </tr>
                     @endforeach

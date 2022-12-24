@@ -3,10 +3,10 @@
 @section('konten')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a> Tulis Aspirasi Anda
+            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a>
         </div>
         <div class="card-body">
-
+            <h5> Tulis Aspirasi Anda</h5>
             <form action="{{ route('aspirasi.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
