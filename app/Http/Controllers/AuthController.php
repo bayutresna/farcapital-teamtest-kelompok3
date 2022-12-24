@@ -15,12 +15,9 @@ class AuthController extends Controller
         $link = "http://localhost:8000/api/login";
 
         $user = HttpClient::fetch('POST',$link,$payload);
-
+        // dd($user);
         $datauser = $user['data'];
 
-        if(!$datauser){
-            return redirect()->back();
-        }
         if(!$datauser){
             $msg = $user['message'];
             return redirect()
