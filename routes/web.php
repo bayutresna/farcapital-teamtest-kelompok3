@@ -21,8 +21,8 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('/admin', function () {
-    return view('frontend.user.dashboard')->middleware('withauth');
-})->name('admin');
+    return view('frontend.user.dashboard');
+})->name('admin')->middleware('withauth');
 
 Route::any('/login', [AuthController::class, 'login'])->name('login')->middleware('noauth');
 Route::any('/logout', [AuthController::class, 'logout']) ->name('logout')->middleware('withauth');
