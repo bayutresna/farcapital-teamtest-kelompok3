@@ -27,11 +27,20 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/admin">Home</a>
                     </li>
+
+                    @if(!session()->get("logged", false))
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
+                    @endif
+
+                    @if(session()->get("logged", false))
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
