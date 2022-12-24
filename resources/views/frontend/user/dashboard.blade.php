@@ -1,5 +1,7 @@
 @extends('template.base')
 
+@section('judul', 'Dashboard Admin')
+
 @section('konten')
     <div class="card">
         <div class="card-header">Edit Admin</div>

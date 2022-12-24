@@ -1,6 +1,9 @@
 @extends('template.base')
 
+@section('judul', 'List Admin')
+
 @section('konten')
+
     <div class="card">
         <div class="card-header">
             <a href="{{ route('user.create') }}" class="btn btn-secondary btn-sm">Tambah Admin</a>

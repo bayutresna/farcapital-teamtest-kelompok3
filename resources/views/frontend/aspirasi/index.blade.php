@@ -1,5 +1,7 @@
 @extends('template.base')
 
+@section('judul', 'List Aspirasi')
+
 @section('konten')
     <div class="card">
 

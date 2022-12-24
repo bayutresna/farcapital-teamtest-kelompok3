@@ -1,7 +1,7 @@
 @extends('template.base')
 
 
-@section('title', 'JUDUL ')
+@section('judul', 'JUDUL ')
 
 @section('konten')
 
