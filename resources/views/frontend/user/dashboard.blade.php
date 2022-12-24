@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Selamat Datang Admin</h1>
-    <button><a href="/aspirasi"></a>Melihat Daftar Aspirasi</button>
-    <button><a href="/user"></a>Menambah Admin</button>
+    <a href="/aspirasi"><button>Melihat Daftar Aspirasi</button></a>
+    <a href="/user"><button>Menambah Admin</button></a>
 </body>
 </html>
