@@ -21,10 +21,10 @@
             @foreach($users as $user)
             <tr>
             <td><img style="width: 300px; height:300px;" src="http://localhost:8000/storage/{{ $author['foto'] }}" alt=""></td>
-                <td>{{ $user["nama_depan"] }}</td>
-                <td>{{ $user["nama_belakang"] }}</td>
+                <td>{{ $user["nama"] }}</td>
+                <td>{{ $user["username"] }}</td>
                 <td>{{ $user["email"] }}</td>
-                <td>{{ $user["alamat"] }}</td>
+                <td>{{ $user["password"] }}</td>
                 <td><button> <a href="/user/detail/{{ $user['id']  }}">Edit</a></button></td>
             </tr>
             @endforeach
