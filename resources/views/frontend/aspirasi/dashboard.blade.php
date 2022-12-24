@@ -11,4 +11,11 @@
             <a href="/aspirasi/create" class="btn btn-success btn-lg">Buat Aspirasi</a>
         </div>
     </div>
+
+    @if ($errors->any())
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            {{ $errors->first() }}.
+        </div>
+    @endif
 @endsection

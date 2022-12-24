@@ -21,11 +21,11 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('/admin', function () {
-    return view('frontend.user.dashboard');
+    return view('frontend.user.dashboard')->middleware('withauth');
 })->name('admin');
 
-Route::any('/login', [AuthController::class, 'login'])->name('login');
-Route::any('/logout', [AuthController::class, 'logout']) ->name('logout');
+Route::any('/login', [AuthController::class, 'login'])->name('login')->middleware('noauth');
+Route::any('/logout', [AuthController::class, 'logout']) ->name('logout')->middleware('withauth');
 
 
 Route::prefix('user')
@@ -33,20 +33,20 @@ Route::prefix('user')
     ->controller(UserController::class)
     ->group(function () {
         Route::get('/', 'index')->name('index')->middleware('withauth');
-        Route::get('/detail/{id}', 'detail')->name('detail');
-        Route::post('/update/{id}', 'update')->name('update');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/add', 'store')->name('store');
-        Route::post('/delete/{id}', 'destroy')->name('destroy');
+        Route::get('/detail/{id}', 'detail')->name('detail')->middleware('withauth');
+        Route::post('/update/{id}', 'update')->name('update')->middleware('withauth');
+        Route::get('/create', 'create')->name('create')->middleware('withauth');
+        Route::post('/add', 'store')->name('store')->middleware('withauth');
+        Route::post('/delete/{id}', 'destroy')->name('destroy')->middleware('withauth');
     });
 
 Route::prefix('aspirasi')
     ->name('aspirasi.')
     ->controller(AspirasiController::class)
     ->group(function () {
-        Route::get('/', 'index')->name('index');
-        Route::get('/detail/{id}', 'detail')->name('detail');
-        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/', 'index')->name('index')->middleware('withauth');
+        Route::get('/detail/{id}', 'detail')->name('detail')->middleware('withauth');
+        Route::post('/update/{id}', 'update')->name('update')->middleware('withauth');
         Route::get('/create', 'create')->name('create');
         Route::post('/add', 'add')->name('store');
     });
