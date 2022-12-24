@@ -21,12 +21,14 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::any('/login', [AuthController::class, 'login'])->name('login');
+Route::any('/logout', [AuthController::class, 'logout']) ->name('logout');
+
 
 Route::prefix('user')
     ->name('user.')
     ->controller(UserController::class)
     ->group(function () {
-        Route::get('/', 'index')->name('index');
+        Route::get('/', 'index')->name('index')->middleware('withauth');
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/create', 'create')->name('create');
