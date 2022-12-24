@@ -37,7 +37,7 @@ Route::prefix('user')
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/create', 'create')->name('create');
         Route::post('/add', 'store')->name('store');
-        Route::post('/delete', 'destroy')->name('destroy');
+        Route::post('/delete/{id}', 'destroy')->name('destroy');
     });
 
 Route::prefix('aspirasi')
