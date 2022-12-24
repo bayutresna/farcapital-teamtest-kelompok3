@@ -29,8 +29,30 @@ class AspirasiController extends Controller
         );
         $data = $responseData["data"];
 
-        return view('aspirasi.detail', [
+        return view('frontend.aspirasi.detail', [
             "data" => $data
         ]);
+    }
+    function create(){
+        return view('frontend.aspirasi.add');
+    }
+
+    function add(Request $req){
+        $file = ['foto' => $req->file('foto')];
+        $payload = [
+            'nama' => $req->input('nama'),
+            'cerita' => $req->input('cerita'),
+            'judul' => $req->input('judul'),
+            'email' => $req->input('email'),
+            'nik' => $req->input('nik'),
+        ];
+
+        $linknya ="http://localhost:8000/aspirasi/store";
+        $aspirasi = HttpClient::fetch(
+            "POST",
+            $linknya,
+            $file
+        );
+        return view('landing_page');
     }
 }
