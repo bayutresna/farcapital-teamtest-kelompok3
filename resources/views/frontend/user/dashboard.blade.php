@@ -2,6 +2,7 @@
 
 @section('konten')
     <div class="card">
+        <div class="card-header">Edit Admin</div>
         <div class="card-body">
 
             <h1>Selamat Datang Admin</h1>

@@ -2,7 +2,9 @@
 
 @section('konten')
     <div class="card">
-        <div class="card-header">Edit Admin</div>
+        <div class="card-header">
+            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a> Edit Admin
+        </div>
         <div class="card-body">
 
             <form action="/user/update/{{ $user['id'] }}" method="POST">

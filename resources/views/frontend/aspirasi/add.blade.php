@@ -3,7 +3,7 @@
 @section('konten')
     <div class="card">
         <div class="card-header">
-            <h5>Tulis Aspirasi Anda</h5>
+            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a> Tulis Aspirasi Anda
         </div>
         <div class="card-body">
 

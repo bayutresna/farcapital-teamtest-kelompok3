@@ -2,12 +2,15 @@
 
 @section('konten')
     <div class="card">
-
+        <div class="card-header">
+            <a href="{{ route('aspirasi.index') }}" class="btn btn-secondary btn-sm">Kembali</a>
+        </div>
         <div class="card-body">
 
             <div class="row">
                 <div class="col">
-                    <img class="img-fluid" style="width:500px; height:450px;" src="{{ $aspirasi['foto'] }}" alt="{{ $aspirasi['nama'] }}">
+                    <img class="img-fluid" style="width:500px; height:450px;" src="{{ $aspirasi['foto'] }}"
+                        alt="{{ $aspirasi['nama'] }}">
                 </div>
                 <div class="col">
                     <table>
