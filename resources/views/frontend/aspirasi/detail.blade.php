@@ -39,6 +39,11 @@
                             <td> : </td>
                             <td>{{ $aspirasi['cerita'] }}</td>
                         </tr>
+                        <tr>
+                            <td>tanggal</td>
+                            <td> : </td>
+                            <td>{{ $aspirasi['created_at'] }}</td>
+                        </tr>
                     </table>
                 </div>
             </div>

@@ -2,8 +2,10 @@
 
 @section('konten')
     <div class="card">
+
         <div class="card-header">
             <a href="/aspirasi/create" class="btn btn-secondary btn-sm">Add</a>
+            <a href="{{ route('admin') }}" class="btn btn-secondary btn-sm">Kembali</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -15,6 +17,7 @@
                         <th>Email</th>
                         <th>NIK</th>
                         <th>Status</th>
+                        <th>Tanggal</th>
                         <th>Opsi</th>
 
                     </tr>
@@ -36,7 +39,7 @@
                                 @default Belum Dibaca
                             @endswitch
                             </td>
-
+                            <td>{{ $aspirasi['created_at'] }}</td>
                             <td>
                                 <a href="{{ route('aspirasi.detail', ['id' => $aspirasi['id']]) }}"
                                     class="btn btn-primary btn-sm">Edit</a>

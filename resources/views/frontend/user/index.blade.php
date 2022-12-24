@@ -4,6 +4,7 @@
     <div class="card">
         <div class="card-header">
             <a href="{{ route('user.create') }}" class="btn btn-secondary btn-sm">Tambah Admin</a>
+            <a href="{{ route('admin') }}" class="btn btn-secondary btn-sm">Kembali</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -12,6 +13,7 @@
                         <th>Nama</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Tanggal</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -22,6 +24,7 @@
                             <td>{{ $user['nama'] }}</td>
                             <td>{{ $user['username'] }}</td>
                             <td>{{ $user['email'] }}</td>
+                            <td>{{ $user['created_at'] }}</td>
                             <td>
                                 <form action="{{ route('user.destroy', ['id' => $user['id']]) }}" method="post">
                                     <a href="/user/detail/{{ $user['id'] }}" class="btn btn-primary btn-sm">Edit</a>
