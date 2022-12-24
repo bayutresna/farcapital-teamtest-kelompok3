@@ -20,7 +20,7 @@
                     </div>
                     <div class="col">
                         <label for="nik" class="">nik</label>
-                        <input type="text" id="nik" name="nik" class="form-control" required>
+                        <input type="number" id="nik" name="nik" class="form-control" required>
                     </div>
                 </div>
 

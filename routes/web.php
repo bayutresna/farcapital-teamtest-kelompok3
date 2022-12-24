@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('frontend.aspirasi.dashboard');
-})->name('homepage');
+})->name('homepage')->middleware('noauth');
 
 Route::get('/admin', function () {
     return view('frontend.user.dashboard');
