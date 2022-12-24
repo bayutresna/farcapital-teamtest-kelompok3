@@ -56,6 +56,6 @@ class AspirasiController extends Controller
             $payload,
             $file
         );
-        return view('landing_page');
+        return redirect()->route('aspirasi.index');
     }
 }
