@@ -2,9 +2,7 @@
 
 @section('konten')
     <div class="card">
-        <div class="card-header">
-            <a href="/aspirasi/show" class="btn btn-secondary btn-sm">Add</a>
-        </div>
+
         <div class="card-body">
 
             <div class="row">
