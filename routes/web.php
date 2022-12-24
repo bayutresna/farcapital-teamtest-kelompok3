@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('implementasitemplate.contoh');
 });
+Route::get('/aspirasi/list', [AspirasiController::class, 'index']);
+Route::get('/aspirasi/{id}/show', [AspirasiController::class, 'show']);
+Route::post('/aspirasi/store', [AspirasiController::class, 'store']);
+Route::post('/aspirasi/{id}/update', [AspirasiController::class, 'update']);
+Route::post('/aspirasi/{id}/delete', [AspirasiController::class, 'destroy']);
