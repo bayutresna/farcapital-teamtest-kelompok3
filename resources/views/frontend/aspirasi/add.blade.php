@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author</title>
-</head>
-<body>
+@extends('template.base')
 
-    <form action="/aspirasi/add" method="POST" enctype="multipart/form-data">
-    @csrf
+@section('konten')
+    <div class="card">
+        <div class="card-header">
+            <h5>Tulis Aspirasi Anda</h5>
+        </div>
+        <div class="card-body">
 
-    <label for="nama">nama</label>
-    <input type="text" id="nama" name="nama" ><br>
+            <form action="{{ route('aspirasi.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-    <label for="cerita">cerita</label>
-    <input type="text" id="cerita" name="cerita" ><br>
+                <label for="nama" class="form-label">nama</label>
+                <input type="text" id="nama" name="nama" class="form-control mb-2" required>
 
-    <label for="foto">foto</label>
-    <input type="file" id="foto" name="foto" accept="image/*" ><br>
+                <div class="row mb-2">
+                    <div class="col">
+                        <label for="email" class="">email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="nik" class="">nik</label>
+                        <input type="text" id="nik" name="nik" class="form-control" required>
+                    </div>
+                </div>
 
-    <label for="judul">judul</label>
-    <input type="judul" id="judul" name="judul" ><br>
+                <label for="judul" class="form-label">judul</label>
+                <input type="judul" id="judul" name="judul" class="form-control mb-2" required>
 
-    <label for="email">email</label>
-    <input type="email" id="email" name="email" ><br>
+                <label for="cerita" class="form-label">cerita</label>
+                <textarea name="cerita" id="cerita" class="form-control mb-2" required></textarea>
 
-    <label for="nik">nik</label>
-    <input type="text" id="nik" name="nik" ><br>
+                <label for="foto" class="form-label">foto</label>
+                <input type="file" id="foto" name="foto" accept="image/*" class="form-control mb-2" required>
 
-    <button type="submit">Add</button>
+                <button type="submit" class="btn btn-success btn-sm">Add</button>
 
-    </form>
-
-</body>
-</html>
+            </form>
+        </div>
+    </div>
+@endsection
