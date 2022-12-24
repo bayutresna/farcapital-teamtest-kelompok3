@@ -1,5 +1,7 @@
 @extends('template.base')
 
+@section('judul', 'Login')
+
 @section('konten')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible mx-auto col-lg-6">

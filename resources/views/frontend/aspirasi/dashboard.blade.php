@@ -1,5 +1,7 @@
 @extends('template.base')
 
+@section('judul', 'Dashboard User')
+
 @section('konten')
 
 
