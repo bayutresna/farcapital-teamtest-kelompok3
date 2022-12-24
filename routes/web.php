@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('frontend.aspirasi.dashboard');
 })->name('homepage');
 
+Route::get('/admin', function () {
+    return view('frontend.user.dashboard');
+})->name('admin');
+
 Route::any('/login', [AuthController::class, 'login'])->name('login');
 Route::any('/logout', [AuthController::class, 'logout']) ->name('logout');
 

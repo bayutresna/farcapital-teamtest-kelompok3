@@ -32,7 +32,7 @@ class AuthController extends Controller
         session()->put('IdUser',$datauser['id']);
         // session()->put('role', $user->role);
 
-        return redirect()->route('homepage');
+        return redirect()->route('admin');
 
     }
 
