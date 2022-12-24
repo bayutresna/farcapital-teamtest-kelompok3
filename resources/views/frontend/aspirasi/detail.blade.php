@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col">
-                    <img class="img-fluid" src="{{ $aspirasi['foto'] }}" alt="{{ $aspirasi['nama'] }}">
+                    <img class="img-fluid" style="width:500px; height:450px;" src="{{ $aspirasi['foto'] }}" alt="{{ $aspirasi['nama'] }}">
                 </div>
                 <div class="col">
                     <table>
