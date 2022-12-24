@@ -27,6 +27,7 @@
                 <td>{{ $aspirasi["cerita"] }}</td>
                 <td>{{ $aspirasi["judul"] }}</td>
                 <td>{{ $aspirasi["email"] }}</td>
+                <td>{{ $aspirasi["nik"] }}</td>
                 <td><button> <a href="/aspirasi/detail/{{ $aspirasi['id']  }}">Edit</a></button></td>
             </tr>
             @endforeach
