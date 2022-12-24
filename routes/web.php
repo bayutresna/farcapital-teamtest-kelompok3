@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AspirasiController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,11 @@ use App\Http\Controllers\AspirasiController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('frontend.user.dashboard');
 })->name('homepage');
 
-Route::any('/login', [AuthController::class, 'login'])->name('login');
+Route::any('/', [AuthController::class, 'login'])->name('login');
 
 Route::prefix('user')
     ->name('user.')
